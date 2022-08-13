@@ -1,0 +1,12 @@
+make --dry-run --always-make --keep-going --print-directory
+make: Entering directory '/home/rca/grocy-for-embassy'
+make: Leaving directory '/home/rca/grocy-for-embassy'
+ 
+make: yq: Command not found
+/bin/sh: 1: yq: not found
+find: './hello-world/src': No such file or directory
+make: *** No rule to make target 'assets/compat/config_spec.yaml', needed by 'hello-world.s9pk'.
+make: *** No rule to make target 'assets/compat/config_rules.yaml', needed by 'hello-world.s9pk'.
+make: *** No rule to make target 'hello-world/Cargo.toml', needed by 'hello-world/target/aarch64-unknown-linux-musl/release/hello-world'.
+make: *** No rule to make target 'hello-world/Cargo.lock', needed by 'hello-world/target/aarch64-unknown-linux-musl/release/hello-world'.
+
