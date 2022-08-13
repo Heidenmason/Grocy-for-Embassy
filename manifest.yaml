@@ -15,7 +15,7 @@ For more information on grocy visit their website and check it out: https://groc
 # The type of license for the project. Include the LICENSE in the root of the project directory. A license is required for a Start9 package.
 license: GPL-3.0 license 
 # The Start9 wrapper repository URL for the package. This repo contains the manifest file (this), any scripts necessary for configuration, backups, actions, or health checks (more below). This key must exist. But could be embedded into the source repository. 
-wrapper-repo: "https://github.com/Heidenmason/Grocy-for-Embassy"
+wrapper-repo: "http://rfsrkoq4bmp2cukcyrzzrvko4dwspazol4wv5u2lk7dvvq7fzdg73yid.onion/Heidenmason/grocy-for-embassy"
 # The original project repository URL. There is no upstream repo in this example
 upstream-repo: "https://github.com/linuxserver/docker-grocy"
 # URL to the support site / channel for the project. This key can be omitted if none exists, or it can link to the original project repository issues.
