@@ -1,7 +1,6 @@
 make all --print-data-base --no-builtin-variables --no-builtin-rules --question
-make: yq: Command not found
-/bin/sh: 1: yq: not found
 find: './hello-world/src': No such file or directory
+
 make: *** No rule to make target 'assets/compat/config_spec.yaml', needed by 'hello-world.s9pk'.  Stop.
 
 # GNU Make 4.2.1
@@ -11,7 +10,7 @@ make: *** No rule to make target 'assets/compat/config_spec.yaml', needed by 'he
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Fri Aug 12 22:30:15 2022
+# Make data base, printed on Sat Aug 13 11:49:32 2022
 
 # Variables
 
@@ -42,7 +41,7 @@ GDMSESSION = ubuntu
 # environment
 XMODIFIERS = @im=ibus
 # makefile
-CURDIR := /home/rca/grocy-for-embassy
+CURDIR := /home/joe/grocy-for-embassy
 # makefile
 SHELL = /bin/sh
 # environment
@@ -50,7 +49,7 @@ VSCODE_NLS_CONFIG = {"locale":"en-us","availableLanguages":{},"_languagePackSupp
 # environment
 _ = /usr/share/code/code
 # environment
-JOURNAL_STREAM = 9:77108
+JOURNAL_STREAM = 8:46827
 # environment
 XDG_CONFIG_DIRS = /etc/xdg/xdg-ubuntu:/etc/xdg
 # makefile (from 'Makefile', line 1)
@@ -60,27 +59,27 @@ MAKEFILE_LIST :=  Makefile
 # environment
 GIO_LAUNCHED_DESKTOP_FILE = /usr/share/applications/code.desktop
 # environment
-USERNAME = rca
+USERNAME = joe
 # environment
 XDG_DATA_DIRS = /usr/share/ubuntu:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop
 # environment
 DBUS_SESSION_BUS_ADDRESS = unix:path=/run/user/1000/bus
 # makefile (from 'Makefile', line 3)
-VERSION := 
+VERSION := 0.1.0.1
 # environment
-MANAGERPID = 3977
+MANAGERPID = 1538
 # environment
 LESSOPEN = | /usr/bin/lesspipe %s
 # environment
-VSCODE_CWD = /home/rca
+VSCODE_CWD = /home/joe
 # default
 MAKE_HOST := x86_64-pc-linux-gnu
 # environment
-PATH = /home/rca/.local/bin:/home/rca/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+PATH = /home/joe/.cargo/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
 # environment
 GPG_AGENT_INFO = /run/user/1000/gnupg/S.gpg-agent:0:1
 # environment
-SESSION_MANAGER = local/rca-tpx1cg8:@/tmp/.ICE-unix/4317,unix/rca-tpx1cg8:/tmp/.ICE-unix/4317
+SESSION_MANAGER = local/joe-Lenovo-FLEX-3-1130:@/tmp/.ICE-unix/1749,unix/joe-Lenovo-FLEX-3-1130:/tmp/.ICE-unix/1749
 # environment
 XDG_RUNTIME_DIR = /run/user/1000
 # environment
@@ -88,7 +87,7 @@ XDG_MENU_PREFIX = gnome-
 # environment
 ELECTRON_RUN_AS_NODE = 1
 # environment
-INVOCATION_ID = e4da50d1729448898e4a0404ba2480e1
+INVOCATION_ID = 12334972e075420e8a7316bbf144a39a
 # default
 .FEATURES := target-specific order-only second-expansion else-if shortest-stem undefine oneshell archives jobserver output-sync check-symlink load
 # environment
@@ -98,7 +97,7 @@ XDG_SESSION_DESKTOP = ubuntu
 # environment
 SSH_AUTH_SOCK = /run/user/1000/keyring/ssh
 # environment
-GIO_LAUNCHED_DESKTOP_FILE_PID = 1488192
+GIO_LAUNCHED_DESKTOP_FILE_PID = 3238
 # automatic
 %F = $(notdir $%)
 # environment
@@ -106,11 +105,11 @@ DISPLAY = :0
 # makefile (from 'Makefile', line 4)
 HELLO_WORLD_SRC :=  hello-world/Cargo.toml hello-world/Cargo.lock
 # environment
-PWD = /home/rca/grocy-for-embassy
+PWD = /home/joe/grocy-for-embassy
 # default
 .LOADED := 
 # environment
-SSH_AGENT_PID = 4279
+SSH_AGENT_PID = 1710
 # environment
 ORIGINAL_XDG_CURRENT_DESKTOP = ubuntu:GNOME
 # environment
@@ -118,15 +117,15 @@ GTK_MODULES = gail:atk-bridge
 # environment
 VSCODE_AMD_ENTRYPOINT = vs/workbench/api/node/extensionHostProcess
 # environment
-HOME = /home/rca
+HOME = /home/joe
 # environment
 LESSCLOSE = /usr/bin/lesspipe %s %s
 # environment
-VSCODE_CODE_CACHE_PATH = /home/rca/.config/Code/CachedData/3b889b090b5ad5793f524b5d1d39fda662b96a2a
+VSCODE_CODE_CACHE_PATH = /home/joe/.config/Code/CachedData/6d9b74a70ca9c7733b29f0456fd8195364076dda
 # environment
-LOGNAME = rca
+LOGNAME = joe
 # environment
-APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = 1
+APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = true
 # environment
 VSCODE_HANDLES_UNCAUGHT_ERRORS = true
 # environment
@@ -148,7 +147,7 @@ GNOME_SHELL_SESSION_MODE = ubuntu
 # default
 MAKE_VERSION := 4.2.1
 # environment
-USER = rca
+USER = joe
 # makefile
 .DEFAULT_GOAL := all
 # environment
@@ -164,7 +163,7 @@ MAKE_COMMAND := make
 # makefile (from 'Makefile', line 1)
 ASSETS := 
 # environment
-VSCODE_IPC_HOOK = /run/user/1000/vscode-3ac86da0-1.69.2-main.sock
+VSCODE_IPC_HOOK = /run/user/1000/vscode-9dbb3c04-1.70.1-main.sock
 # makefile
 MAKEFLAGS = pqrR
 # environment
@@ -210,7 +209,7 @@ GJS_DEBUG_OUTPUT = stderr
 # environment
 LANG = C
 # environment
-VSCODE_PID = 1488192
+VSCODE_PID = 3238
 # variable set hash-table stats:
 # Load=98/1024=10%, Rehash=0, Collisions=16/142=11%
 
@@ -220,7 +219,7 @@ VSCODE_PID = 1488192
 
 # Directories
 
-# . (device 66307, inode 4983020): 15 files, no impossibilities.
+# . (device 45826, inode 1186861): 15 files, no impossibilities.
 
 # 15 files, no impossibilities in 1 directories.
 
@@ -258,7 +257,7 @@ Dockerfile:
 # Not a target:
 Makefile:
 #  Implicit rule search has been done.
-#  Last modified 2022-08-12 20:22:27.613157
+#  Last modified 2022-08-13 11:48:17.417345588
 #  File has been updated.
 #  Successfully updated.
 
@@ -284,9 +283,9 @@ clean:
 
 # Not a target:
 check-web.sh:
- 
 #  Implicit rule search has not been done.
 #  Modification time never checked.
+ 
 #  File has not been updated.
 
 # Not a target:
@@ -329,7 +328,7 @@ hello-world/target/aarch64-unknown-linux-musl/release/hello-world: hello-world/C
 # Not a target:
 manifest.yaml:
 #  Implicit rule search has been done.
-#  Last modified 2022-08-12 17:46:31.985438
+#  Last modified 2022-08-13 11:48:17.425346481
 #  File has been updated.
 #  Successfully updated.
 
@@ -354,12 +353,12 @@ image.tar: Dockerfile docker_entrypoint.sh check-web.sh hello-world/target/aarch
 
 # No general ('VPATH' variable) search path.
 
-# strcache buffers: 1 (0) / strings = 30 / storage = 452 B / avg = 15 B
-# current buf: size = 8162 B / used = 452 B / count = 30 / avg = 15 B
+# strcache buffers: 1 (0) / strings = 30 / storage = 448 B / avg = 14 B
+# current buf: size = 8162 B / used = 448 B / count = 30 / avg = 14 B
 
 # strcache performance: lookups = 51 / hit rate = 41%
 # hash-table stats:
 # Load=30/8192=0%, Rehash=0, Collisions=1/51=2%
-# Finished Make data base on Fri Aug 12 22:30:15 2022
+# Finished Make data base on Sat Aug 13 11:49:32 2022
 
  
