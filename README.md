@@ -1,3 +1,3 @@
 # grocy-for-Embassy
 
-grocy packaged for EmbassyOS
+grocy packaged for EmbassyOS*
