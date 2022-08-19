@@ -1,7 +1,12 @@
 # minimal Docker image based on Alpine Linux with a complete package index
-FROM lscr.io/linuxserver/grocy:amd64-latest #x86-64
-#FROM lscr.io/linuxserver/grocy:arm64v8-latest #arm64
-#FROM lscr.io/linuxserver/grocy:arm32v7-latest #armhf
+## x86-64
+FROM lscr.io/linuxserver/grocy:amd64-latest
+
+#arm64
+#FROM lscr.io/linuxserver/grocy:arm64v8-latest
+
+#armhf
+#FROM lscr.io/linuxserver/grocy:arm32v7-latest
 
 # add new packages or upgrade packages to the running system
 RUN \
