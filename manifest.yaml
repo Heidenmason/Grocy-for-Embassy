@@ -7,7 +7,7 @@ title: "grocy"
 # Service version - accepts up to four digits, where the last confirms to revisions necessary for EmbassyOS - see documentation: https://github.com/Start9Labs/emver-rs. This value will change with each release of the service. 
 version: 0.1.0.1
 # Release notes for the update - can be a string, paragraph or URL
-release-notes: "grocy packaged for Embassy grocy is an ERP system for your kitchen! Cut down on food waste, and manage your chores with this brilliant utility.
+release-notes: "grocy is an ERP system for your kitchen! Cut down on food waste, and manage your chores with this brilliant utility.
 
 Keep track of your purchases, how much food you are wasting, what chores need doing and what batteries need charging with this proudly Open Source tool
 
