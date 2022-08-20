@@ -1,6 +1,6 @@
 #!/bin/sh
 
-#exec tini hello-world
+#exec tini grocy
 
 docker run -d \
     --name=grocy-test \

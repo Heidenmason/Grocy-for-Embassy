@@ -22,7 +22,7 @@ EXPOSE 80 443
 VOLUME /config
 
 # C standard library
-#ADD ./hello-world/target/aarch64-unknown-linux-musl/release/hello-world /usr/local/bin/hello-world
+#ADD ./grocy/target/aarch64-unknown-linux-musl/release/grocy /usr/local/bin/grocy
 # Dockerfile directive or instruction that is used to specify the executable which should run when a container is started
 ADD ./docker_entrypoint.sh /usr/local/bin/docker_entrypoint.sh
 #Change file permission, ensure executable.
