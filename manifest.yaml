@@ -29,8 +29,7 @@ description:
   # This is the first description visible to the user in the marketplace.
   short: grocy service #Example service
   # This description will display with additional details in the service's individual marketplace page
-  long: |
-    grocy is a web-based self-hosted groceries & household management solution for your home.
+  long: grocy is a web-based self-hosted groceries & household management solution for your home.
 # These assets are static files necessary for packaging the service for Start9 (into an s9pk). Each value is a path to the specified asset. If an asset is missing from this list, or otherwise denoted, it will be defaulted to the values denoted below. 
 assets:
   # Default = LICENSE.md
@@ -90,7 +89,7 @@ interfaces:
     tor-config:
     # Port mappings are from the external port to the internal container port
       port-mapping:
-        80: "80"
+        9283: "80" #80: "80"
     # Port mappings are from the external port to the internal container port
     lan-config:
       443:
