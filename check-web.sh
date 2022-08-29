@@ -1,7 +1,7 @@
 #!/bin/sh
 
 DURATION=$(</dev/stdin)
-if (($DURATION <= 5000)); then
+if (($DURATION <= 2500)); then
     exit 60
 else
     if ! curl --silent --fail grocy.embassy &>/dev/null; then
