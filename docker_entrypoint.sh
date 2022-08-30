@@ -1,3 +1,3 @@
 #!/bin/sh
 
-exec tini grocy
+/app/grocy
