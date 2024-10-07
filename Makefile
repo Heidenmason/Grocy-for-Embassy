@@ -1,26 +1,60 @@
-ASSETS := $(shell yq e '.assets.[].src' manifest.yaml)
-ASSET_PATHS := $(addprefix assets/,$(ASSETS))
-VERSION := $(shell yq e ".version" manifest.yaml)
-#HELLO_WORLD_SRC := $(shell find ./grocy/src) grocy/Cargo.toml grocy/Cargo.lock
-S9PK_PATH=$(shell find . -name grocy.s9pk -print)
+PKG_ID := $(shell yq e ".id" manifest.yaml)
+PKG_VERSION := $(shell yq e ".version" manifest.yaml)
+TS_FILES := $(shell find ./ -name \*.ts)
 
-# delete the target of a rule if it has changed and its recipe exits with a nonzero exit status
 .DELETE_ON_ERROR:
 
 all: verify
 
-verify: grocy.s9pk $(S9PK_PATH)
-	embassy-sdk verify s9pk $(S9PK_PATH)
+arm:
+	@rm -f docker-images/x86_64.tar
+	@ARCH=aarch64 $(MAKE)
+
+x86:
+	@rm -f docker-images/aarch64.tar
+	@ARCH=x86_64 $(MAKE)
+
+verify: $(PKG_ID).s9pk
+	@start-sdk verify s9pk $(PKG_ID).s9pk
+	@echo " Done!"
+	@echo "   Filesize: $(shell du -h $(PKG_ID).s9pk) is ready"
+
+install:
+	@if [ ! -f ~/.embassy/config.yaml ]; then echo "You must define \"host: http://server-name.local\" in ~/.embassy/config.yaml config file first."; exit 1; fi
+	@echo "\nInstalling to $$(grep -v '^#' ~/.embassy/config.yaml | cut -d'/' -f3) ...\n"
+	@[ -f $(PKG_ID).s9pk ] || ( $(MAKE) && echo "\nInstalling to $$(grep -v '^#' ~/.embassy/config.yaml | cut -d'/' -f3) ...\n" )
+	@start-cli package install $(PKG_ID).s9pk
 
 clean:
-	rm -f image.tar
-	rm -f grocy.s9pk
+	rm -rf docker-images
+	rm -f $(PKG_ID).s9pk
+	rm -f scripts/*.js
 
-grocy.s9pk: manifest.yaml image.tar instructions.md #$(ASSET_PATHS)
-	embassy-sdk pack
+scripts/embassy.js: $(TS_FILES)
+	deno bundle scripts/embassy.ts scripts/embassy.js
 
-image.tar: Dockerfile docker_entrypoint.sh check-web.sh #grocy/target/aarch64-unknown-linux-musl/release/grocy
-	DOCKER_CLI_EXPERIMENTAL=enabled docker buildx build --tag start9/grocy/main:$(VERSION) --platform=linux/arm64 -o type=docker,dest=image.tar .
+docker-images/aarch64.tar: manifest.yaml Dockerfile docker_entrypoint.sh
+ifeq ($(ARCH),x86_64)
+else
+	mkdir -p docker-images
+	docker buildx build --tag start9/$(PKG_ID)/main:$(PKG_VERSION) \
+		--platform=linux/arm64 -o type=docker,dest=docker-images/aarch64.tar .
+endif
 
-grocy/target/aarch64-unknown-linux-musl/release/grocy: $(GROCY_SRC)
-	docker run --rm -it -v ~/.cargo/registry:/root/.cargo/registry -v "$(shell pwd)"/grocy:/home/rust/src start9/rust-musl-cross:aarch64-musl cargo build --release
+docker-images/x86_64.tar: manifest.yaml Dockerfile docker_entrypoint.sh
+ifeq ($(ARCH),aarch64)
+else
+	mkdir -p docker-images
+	docker buildx build --tag start9/$(PKG_ID)/main:$(PKG_VERSION) \
+		--platform=linux/amd64 -o type=docker,dest=docker-images/x86_64.tar .
+endif
+
+$(PKG_ID).s9pk: manifest.yaml instructions.md icon.png LICENSE scripts/embassy.js docker-images/aarch64.tar docker-images/x86_64.tar
+ifeq ($(ARCH),aarch64)
+	@echo "start-sdk: Preparing aarch64 package ..."
+else ifeq ($(ARCH),x86_64)
+	@echo "start-sdk: Preparing x86_64 package ..."
+else
+	@echo "start-sdk: Preparing Universal Package ..."
+endif
+	@start-sdk pack
