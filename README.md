@@ -1,3 +1,3 @@
 # grocy-wrapper
 
-grocy packaged for EmbassyOS
+grocy packaged for Start9
